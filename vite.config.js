@@ -4,6 +4,8 @@ import UnoCSS from 'unocss/vite'
 
 
 export default defineConfig({
+
+  base:"/memorycard/",
   plugins: [
     UnoCSS({
       shortcuts:[  
