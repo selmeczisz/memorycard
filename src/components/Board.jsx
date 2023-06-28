@@ -4,14 +4,14 @@ import { useState } from 'react';
 export const Board = ({emojis, setEmojis, gameState, setGameState}) => {
   const [prev, setPrev] = useState(null);
 
-  console.log(emojis);
+  //console.log(emojis);
 
   const containerStyle={
     gridTemplateColumns:`repeat(${gameState.size}, auto)`
   }
 
   const showHide=(domObj)=>{
-    console.log(domObj.children[0],domObj.children[1]);
+    //console.log(domObj.children[0],domObj.children[1]);
     [domObj.children[0],domObj.children[1]].forEach(dObj=>{
         dObj.classList.toggle("hidden");
         dObj.classList.toggle("flex");
@@ -25,14 +25,14 @@ export const Board = ({emojis, setEmojis, gameState, setGameState}) => {
     setGameState({...gameState,score:gameState.score+1});
 
 
-    console.log(emojiObj);
-    console.log(id, event.target.parentNode);
+    //console.log(emojiObj);
+   // console.log(id, event.target.parentNode);
 
     const parent= event.target.parentNode;
 
     showHide(event.target.parentNode);
     if(prev) {
-      console.log('második katt', emojiObj.emoji,prev.children[0].innerHTML)
+      //console.log('második katt', emojiObj.emoji,prev.children[0].innerHTML)
       if(emojiObj.emoji==prev.children[0].innerHTML){
         setEmojis(emojis.map(obj=>obj.id==id ? {...obj, disabled:true} : obj))
         setGameState({...gameState,remaining:gameState.remaining-1});
